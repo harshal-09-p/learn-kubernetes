@@ -9,11 +9,11 @@ spec:
   containers:
     - name: nginx
       image: nginx
-      volumeMount:
+      volumeMounts:
         - name: html
           mountPath: /usr/share/nginx/html
     - name: debug
       image: rkalluru/learnk8s:rhel9-bare
-      volumeMount:
+      volumeMounts:
         - name: html
           mountPath: /mnt
