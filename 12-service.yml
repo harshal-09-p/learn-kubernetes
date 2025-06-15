@@ -14,7 +14,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-cip
+  name: nginx-np
 spec:
   type: nodePort
   selector:
