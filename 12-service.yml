@@ -22,7 +22,7 @@ spec:
   ports:
     - name: http
       protocol: TCP
-      port: 3257
+      port: 80
       targetPort: 80
 ---
 apiVersion: v1
