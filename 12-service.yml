@@ -16,13 +16,13 @@ kind: Service
 metadata:
   name: nginx-np
 spec:
-  type:  NodePort
+  type: NodePort
   selector:
     app: nginx
   ports:
     - name: http
       protocol: TCP
-      port: 80
+      port: 3257
       targetPort: 80
 ---
 apiVersion: v1
