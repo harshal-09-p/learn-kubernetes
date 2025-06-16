@@ -7,7 +7,7 @@ data:
   DEMO_FAREWELL: "Such a sweet sorrow"
 ---
 apiVersion: v1
-kind: pod
+kind: Pod
 metadata:
   name: env-var-demo-cm
   labels:
