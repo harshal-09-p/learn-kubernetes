@@ -40,7 +40,7 @@ spec:
     image: nginx
     resources:
       requests:
-        memory: "4000Mi"
+        memory: "2000Mi"
         cpu: "100m"
       limits:
         memory: "5100Mi"
