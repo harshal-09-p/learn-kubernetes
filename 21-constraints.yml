@@ -13,14 +13,14 @@ spec:
     metadata:
       labels:
         app: default
-  spec:
-    topologySpreadConstraints:
-      - topologyKey: topology.kubernetes.io/zone
-        maxshew: 1
-        whenUnSatifiable: DoNotSchedule
-        labelSelector:
-          matchLabels:
-            app: default
-    containers:
-      - name: nginx
-        image: nginx:latest
+    spec:
+      topologySpreadConstraints:
+        - topologyKey: topology.kubernetes.io/zone
+          maxshew: 1
+          whenUnSatifiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: default
+      containers:
+        - name: nginx
+          image: nginx:latest
