@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-no-priority-class
+  labels:
+    priorityClass: none
+spec:
+  replicas: 15
+  selector:
+    matchLabels:
+      priorityClass: none
+  template:
+    metadata:
+      labels:
+        priorityClass: none
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.15
+        resources:
+          requests:
+            cpu: 300m
+            memory: 456Mi
+---
+apiVersion: scheduling.k8s.io/v1
+kind: priorityClass
+metadata:
+  name: high-priority-no-preemption
+value: 1000000
+globalDefault: false
+description: "high priority no preemption"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-with-preemption
+  labels:
+    priorityClass: high-priority-no-preemption
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      priorityClass: high-priority-no-preemption
+  template:
+    metadata:
+      labels:
+        priorityClass: high-priority-no-preemption
+    spec:
+      priorityClassName: high-priority-no-preemption
+      containers:
+      - name: nginx
+        image: nginx:1.15
+        resources:
+          requests:
+            cpu: 300m
+            memory: 456Mi
