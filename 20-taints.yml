@@ -20,7 +20,7 @@ spec:
     - name: nginx
       image: nginx:latest
   tolerations:
-     - key: "grouptype"
+     - key: "project"
        operator: "Equal"
-       value: "default"
+       value: "roboshop"
        effect: "NoSchedule"
