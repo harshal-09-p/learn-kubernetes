@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: taint-sample
+  labels:
+    app: default
+spec:
+  replicas: 12
+  selectors:
+    matchLabels:
+      app: default
+  template:
+    metadata:
+      labels:
+        app: default
+  spec:
+    topologySpreadConstraints:
+      maxshew: 1
+      whenUnSatifiable: DoNotSchedule
+      labelSelector:
+        matchLabels:
+          app: default
+    containers:
+      - name: nginx
+        image: nginx:latest
