@@ -14,7 +14,7 @@ kind: Pod
 metadata:
   name: taint-sample2
   labels:
-    name: taint-sample
+    name: taint-sample2
 spec:
   containers:
     - name: nginx
