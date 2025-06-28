@@ -23,7 +23,7 @@ spec:
             memory: 456Mi
 ---
 apiVersion: scheduling.k8s.io/v1
-kind: priorityClass
+kind: PriorityClass
 metadata:
   name: high-priority-no-preemption
 value: 1000000
@@ -46,7 +46,7 @@ spec:
       labels:
         priorityClass: high-priority-no-preemption
     spec:
-      priorityClassName: high-priority-no-preemption
+      PriorityClassName: high-priority-no-preemption
       containers:
       - name: nginx
         image: nginx:1.15
