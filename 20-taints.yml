@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: taint-sample
+  labels:
+    name: taint-sample
+spec:
+  containers:
+    - name: nginx
+      image: nginx:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: taint-sample2
+  labels:
+    name: taint-sample
+spec:
+  containers:
+    - name: nginx
+      image: nginx:latest
+  tolerations:
+     - key: "grouptype"
+       operator: "Equal"
+       value: "default"
+       effect: "NoSchedule"
