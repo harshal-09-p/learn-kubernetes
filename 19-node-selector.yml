@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodeSelector-sample
+  labels:
+    name: nodeSelector-sample
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+  nodeSelector:
+    grouptype: default
