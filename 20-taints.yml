@@ -7,7 +7,7 @@ spec:
     - name: nginx
       image: nginx:latest
 ---
-apiVersion: v1
+apiVersion: apps/v1
 kind: Pod
 metadata:
   name: taint-sample2
