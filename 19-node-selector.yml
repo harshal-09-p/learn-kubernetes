@@ -8,5 +8,5 @@ spec:
   containers:
   - name: nginx
     image: nginx:latest
-  # nodeSelector:
-  #   grouptype: default
+  nodeSelector:
+    grouptype: default
