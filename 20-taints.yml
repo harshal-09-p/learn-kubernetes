@@ -16,7 +16,6 @@ metadata:
   labels:
     name: taint-sample2
 spec:
-  replicas: 5
   containers:
     - name: nginx
       image: nginx:latest
