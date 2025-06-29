@@ -40,7 +40,7 @@ spec:
               - key: security
                 operator: In
                 values:
-                  - s2
+                  - s3
           topologyKey: choice
       preferredDuringSchedulingIgnoredDuringExecution:
         - weight: 100
@@ -50,5 +50,5 @@ spec:
                 - key: security
                   operator: In
                   values:
-                  - s2
+                  - s1
             topologyKey: choice
