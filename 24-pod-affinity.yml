@@ -40,8 +40,8 @@ spec:
               - key: security
                 operator: In
                 values:
-                  - s3
-          topologyKey: choice
+                  - s2
+          topologyKey: choices
       preferredDuringSchedulingIgnoredDuringExecution:
         - weight: 100
           podAffinityTerm:
