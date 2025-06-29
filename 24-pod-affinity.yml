@@ -42,13 +42,13 @@ spec:
                 values:
                   - two
           topologyKey: choice
-      preferredDuringSchedulingIgnoredDuringExecution:
-        - weight: 100
-          podAffinityTerm:
-            labelSelector:
-              matchExpressions:
-                - key: choice
-                  operator: In
-                  values:
-                  - two
+      # preferredDuringSchedulingIgnoredDuringExecution:
+      #   - weight: 100
+      #     podAffinityTerm:
+      #       labelSelector:
+      #         matchExpressions:
+      #           - key: security
+      #             operator: In
+      #             values:
+      #             - two
             topologyKey: choice
