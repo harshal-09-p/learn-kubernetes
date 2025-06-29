@@ -51,4 +51,4 @@ spec:
       #             operator: In
       #             values:
       #             - two
-            topologyKey: choice
+      #       topologyKey: choice
