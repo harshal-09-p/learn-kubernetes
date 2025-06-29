@@ -36,11 +36,11 @@ spec:
     podAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
         - labelSelector:
-            - matchExpressions:
-                - key: security
-                  operator: In
-                  values:
-                    - two
+            matchExpressions:
+              - key: security
+                operator: In
+                values:
+                  - two
           topologyKey: choice
       preferredDuringSchedulingIgnoredDuringExecution:
         - weight: 100
