@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-01
+  labels:
+    security: s1
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+  nodeSelector:
+    choice: one
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-02
+  labels:
+    security: s2
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+  nodeSelector:
+    choice: two
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: with-pod-affinity
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            - matchExpressions:
+                - key: security
+                  operator: In
+                  values:
+                    - two
+          topologyKey: choice
+      preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 100
+          podAffinityTerm:
+            labelSelector:
+              matchExpressions:
+                - key: choice
+                  operator: In
+                  values:
+                  - two
+            topologyKey: choice
